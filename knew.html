@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/master.css">
+	<link rel="stylesheet" type="text/css" href="css/datepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/navbar.css">
+
+	
+	
+  
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-datepicker.js"></script>
+
+
+   
+</head>
+<body>
+    <div class="container">
+  
+     <div class="form-horizontal" role="form" style="margin-top:1%;">
+                    <ol class="breadcrumb">
+                         <li> Nuttachai Tippayaboonnont </li>
+                         <li class="active">tutorial</li>
+                    </ol>
+            </div>
+  
+      <div class="form-horizontal" style="margin-top:2%">
+        <div class="panel panel-default" id="criteria">
+         <div class="panel-heading">
+                 <h4 class="panel-title">
+                     <h2 class="panel-title"><a id="collapse" data-toggle="collapse" href="#collapse1">
+                         <span id="caretdown" class="fa fa-caret-up">ทดสอบเขียนโค๊ด</span>
+                     </a></h2>
+                 </h4>
+             </div>
+               <div id="collapse1" class="panel-collapse in" >
+              <div class="panel-body">
+                  <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-1">
+                          <label>รหัสพนักงาน</label>
+                    </div>
+                    <div class="col-sm-3">
+                       <select class="form-control" id="option">
+                         <option value="0">กรุณากรอกรหัสพนักงาน</option>
+                         <option value="1">1150</option>
+                         <option value="2">1112</option>
+                         <option value="3">1234</option>
+                         <option value="4">7777</option>
+                       </select>
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="btn btn-primary" id="search"><i class="fa fa-search"></i> ค้นหา</button>
+
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+<div class="form-horizontal col-sm-offset-1 col-sm-10" style="margin-top:2%;">
+    <table class="table table-responsive ">
+        <thead>
+            <th class="th"> รหัสพนักงาน </th>
+            <th class="th"> ชื่อพนักงาน </th>
+        </thead>
+        <tbody>
+          
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
+
+   <script type="text/javascript">
+     $("button#search").click(function(){
+        // console.log($("#option").val())
+     })
+
+   </script>

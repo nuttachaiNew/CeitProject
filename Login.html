@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/master.css">
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<title>Login CEIT</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img" class="profile-img-card" src="Images/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            
+
+            <form class="form-signin" method="POST" action="check_login.php">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" name="Username" id="Username" class="form-control" placeholder="Username" required autofocus>
+                <input type="password" name="Password" id="Password" class="form-control" placeholder="Password" required>
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Login</button>
+               
+            </form><!-- /form -->
+            <a href="#" class="Register" data-toggle="modal" data-target="#register">
+                Register
+            </a><p>
+
+            <!-- <a href="#" class="forgot-password">
+                Forgot the password?
+            </a> -->
+
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+
+
+     <!-- Modal -->
+  <div class="modal fade" id="register" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">สมัครสมาชิก</h4>
+        </div>
+        <div class="modal-body">
+
+              <form role="form" action="saveRegister.php" method="post">
+
+                <div class="form-group">
+                  <div class="col-sm-4"></div>
+                    <label for="fullname" class="col-sm-2 control-label">ชื่อ - นามสกุล</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="fullname" placeholder="ชื่อ-นามสกุล" required autofocus>
+                        </div>                
+                </div>
+
+
+                <div class="form-group">
+                   <div class="col-sm-4"></div>
+                                    <label for="employeecode" class="col-sm-2 control-label">รหัสพนักงาน</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="employeecode" placeholder="รหัสพนักงาน" required autofocus>
+                                    </div>
+                                </div>
+
+
+                 <div class="form-group">
+                    <div class="col-sm-4"></div>
+                                     <label for="department" class="col-sm-2 control-label">แผนก/ฝ่าย</label>
+                                    <div class="col-sm-4">
+                                     <input list="Department" name="department" class="form-control" placeholder="แผนก/ฝ่าย" required autofocus>
+                                         <datalist id="Department">
+                                         <option value="สภามหาวิทยาลัย">
+                                         <option value="คณะกรรมการการเงินและทรัพย์สิน">
+                                         <option value="สภาวิชาการ">
+                                         <option value="ฝ่ายของสำนักงานอธิการบดี">
+                                         <option value="สำนักงานอธิการบดี">
+                                         <option value="สำนักวิชาวิทยาศาสตร์">
+                                         <option value="สำนักวิชาเทคโนโลยีสังคม">
+                                         <option value="สำนักวิชาเทคโนโลยีการเกษตร">
+                                         <option value="สำนักวิชาแพทยศาสตร์">
+                                         <option value="สำนักวิชาวิศวกรรมศาสตร์">
+                                         <option value="ศูนย์บรรณสารและสื่อการศึกษา">
+                                         <option value="ศูนย์เครื่องมือวิทยาศาสตร์และเทคโนโลยี">
+                                         <option value="ศูนย์บริการการศึกษา">
+                                         <option value="ศูนย์คอมพิวเตอร์">
+                                         <option value="ศูนย์กิจการนานาชาติ">
+                                         <option value="สถาบันวิจัยและพัฒนา">
+                                         <option value="หน่วยวิสาหกิจ">
+                                         <option value="โครงการ/กิจกรรมพิเศษ">
+
+                                        </datalist>
+                                                                                  
+                                    </div>
+                                </div>
+
+                  <!-- <div class="form-group">
+                    <div class="col-sm-4"></div>
+                                     <label for="Position" class="col-sm-2 control-label">ตำแหน่ง</label>
+                                    <div class="col-sm-4">
+                                    <input type="text" name="Position"  class="form-control" placeholder="ตำแหน่ง" required autofocus>
+                                                                                  
+                                    </div>
+                                </div> -->
+
+
+                                 <div class="form-group">
+                                  <div class="col-sm-4"></div>
+                                    <label for="telephone" class="col-sm-2 control-label">เบอร์โทรศัพท์</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="telephone" placeholder="เบอร์โทรศัพท์" required autofocus>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                  <div class="col-sm-4"></div>
+                                    <label for="phone" class="col-sm-2 control-label">เบอร์มือถือ</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="phone" placeholder="เบอร์มือถือ" required autofocus>
+                                    </div>
+                                </div>
+                  
+                  
+                  
+                           <div class="form-group">
+                            <div class="col-sm-4"></div>
+                                    <label for="email" class="col-sm-2 control-label">อีเมล</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="email" placeholder="ที่อยู่อีเมล" required autofocus>
+                                    </div>
+                                </div>
+
+                                 <div class="form-group">
+                                  <div class="col-sm-4"></div>
+                                    <label for="username" class="col-sm-2 control-label">ชื่อผู้ใช้งาน</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ใช้งาน" required autofocus>
+                                    </div>
+                                </div>
+                                    
+                                <div class="form-group">
+                                  <div class="col-sm-4"></div>
+                                    <label for="password" class="col-sm-2 control-label">รหัสผ่าน</label>
+                                    <div class="col-sm-4">
+                                        <input type="password" class="form-control" name="password" placeholder="รหัสผ่าน" required autofocus>
+                                    </div>
+                                </div>
+                                    
+                            <div class="form-group">
+                              <div class="col-sm-4"></div>
+                                    <label for="password1" class="col-sm-2 control-label">ยืนยันรหัสผ่าน</label>
+                                    <div class="col-sm-4">
+                                        <input type="password" class="form-control" name="password1" placeholder="ยืนยันรหัสผ่าน" required autofocus>
+                                    </div>
+                                </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+                           <!--  <div class="form-group">
+                              <div class="col-sm-4"></div>
+                                    <label for="status" class="col-sm-2 control-label">สถานะ</label>
+                                    <div class="col-sm-4">
+                                    <select name="status" class="form-control" placeholder="สถานะ" required autofocus>                
+                                         <option value="Employee">Employee</option>   
+                                         <option value="Approver">Approver</option>               
+
+                                    </select><br><br>
+                                         
+                                    </div>
+                                </div>                  -->                                                      
+            
+    
+        </div>
+        <div class="modal-footer">
+          <label>ศูนย์นวัตกรรมและเทคโนโลยีการศึกษา</label><br/>
+                      <label>โทรศัพท์ : 0-4422-4994 โทรสาร : 0-4422-4974</label><br/>
+                      <label><a href="http://ceit.sut.ac.th">ceit.sut.ac.th</a></label><br/>
+                        <br/><button type="submit" class="btn btn-sm btn-primary">สมัครสมาชิก</button>
+                       <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
+                </form>        
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+
+
+</body>
+
+<style>
+
+/*
+ * Specific styles of signin component
+ */
+/*
+ * General styles
+ */
+body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    /*background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+}
+
+.card-container.card {
+    max-width: 300px;
+    padding: 40px 40px;
+    /*background-color: #2e353d;*/
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/*
+ * Card component
+ */
+.card {
+    background-color: #F7F7F7;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #inputUsername,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-signin {
+    /*background-color: #4d90fe; */
+    /*background-color: rgb(104, 145, 162);*/
+    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgb(12, 97, 33);
+}
+
+.Register {
+    color: rgb(104, 145, 162);
+}
+
+.Register:hover,
+.Register:active,
+.Register:focus{
+    color: rgb(12, 97, 33);
+}
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgb(12, 97, 33);
+}
+</style>
+
+
+
+</html>
